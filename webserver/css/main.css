@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Poppins&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+.logo {
+    width: 200px;
+    margin-left: 20px;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.navbar > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+nav > ul > li {
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+}
+
+nav > ul > li:hover {
+    animation: spin360 1s ease-in-out infinite;
+    transition: transform 1s
+}
+
+@keyframes spin360 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+.search-bar {
+    width: 250px;
+    text-align: center;
+    height: 20px;
+}
