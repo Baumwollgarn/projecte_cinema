@@ -86,8 +86,9 @@ nav > ul > li > a {
     box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
-    margin-left: 50px;
+    align-self: center;
     margin-top: 50px;
+    cursor: pointer;
 }
 
 .card-image {
@@ -124,4 +125,44 @@ nav > ul > li > a {
 .mini-nav > nav > ul > li {
     display: block;
     font-size: 14px;
+}
+
+/*.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-right: auto;
+    margin-left: auto;
+    justify-items: center;
+}*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    justify-items: center;
+}
+
+.schedule-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.schedule-item {
+    margin-right: 15px;
+}
+
+.schedule-title {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.schedule {
+    height: 150px;
+    display: none;
+    grid-area: schedule;
+}
+
+.placeholder {
+    grid-area: ph;
 }
