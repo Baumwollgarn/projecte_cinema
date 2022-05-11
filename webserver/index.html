@@ -29,9 +29,36 @@
     </div>
 </header>
 
-<main>
-    <div class="grid">
-        <div class="card" onclick="showSchedule(1)">
+<main onload="getMovies()">
+    <div class="dark" id="dark"></div>
+
+    <div class="showtimes" id="showTimes">
+        <h3 class="showtimes-title">Selecciona una sessio</h3>
+        <div class="showtimes-content">
+            <div class="showtimes-item">
+                <div class="showtimes-item-content">
+                    <h4 class="showtimes-item-title">Sessio 1</h4>
+                    <p class="showtimes-item-time">10:00 - 12:00</p>
+                </div>
+            </div>
+            <div class="showtimes-item">
+                <div class="showtimes-item-content">
+                    <h4 class="showtimes-item-title">Sessio 2</h4>
+                    <p class="showtimes-item-time">12:00 - 14:00</p>
+                </div>
+            </div>
+            <div class="showtimes-item">
+                <div class="showtimes-item-content">
+                    <h4 class="showtimes-item-title">Sessio 3</h4>
+                    <p class="showtimes-item-time">14:00 - 16:00</p>
+                </div>
+            </div>
+        </div>
+        <i class="fa-solid fa-times close" onclick="hideShowTimes()"> Tancar</i>
+    </div>
+
+    <div class="grid movieCards">
+        <div class="card" onclick="showShowTimes(1)">
             <img src="https://sm.ign.com/ign_es/movie/d/doctor-str/doctor-strange-in-the-multiverse-of-madness_4pjr.jpg" alt="cine_1" class="card-image">
             <h3 class="card-title">Doctor Strange</h3>
         </div>
@@ -52,7 +79,7 @@
                 </div>
                 </div>
         </div>
-        <div class="card" onclick="showSchedule(2)">
+        <div class="card" onclick="fetchSchedule(2)">
             <img src="https://picsum.photos/seed/cinema/700/1000" alt="cine_1" class="card-image">
             <h3 class="card-title">Alcarràs</h3>
         </div>
@@ -199,7 +226,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </main>
 

@@ -3,6 +3,7 @@
 html {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 body {
@@ -102,7 +103,7 @@ nav > ul > li > a {
 }
 
 .card:hover .card-image {
-    transform: scale(1.15);
+    transform: scale(1.2);
 }
 
 .card-title {
@@ -165,4 +166,62 @@ nav > ul > li > a {
 
 .placeholder {
     grid-area: ph;
+}
+
+.showtimes {
+    width: 450px;
+    height: 450px;
+    display: none;
+    position: absolute;
+    border-radius: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: rgba(78, 214, 255, 0.99);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s;
+}
+
+.showtimes-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showtimes-item {
+    margin-right: 15px;
+    justify-content: center;
+}
+
+.dark {
+    background-color: rgba(0,0,0,0.75);
+    display: none;
+    position: absolute;
+    width: 5000px;
+    height: 5000px;
+    z-index: 5;
+    animation: fadeIn 1s;
+}
+
+.close {
+    cursor: pointer;
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
