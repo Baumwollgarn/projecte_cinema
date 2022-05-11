@@ -26,13 +26,11 @@ services:
       - database
 
   webserver:
-    image: httpd:2.4
+    image: httpd:2
     ports:
       - '80:80'
-    expose:
-      - '80'
     volumes:
-      - ./webserver:/var/www/html
+      - ./webserver:/usr/local/apache2/htdocs
     depends_on:
       - database
 
