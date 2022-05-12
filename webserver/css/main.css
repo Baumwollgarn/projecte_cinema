@@ -314,6 +314,12 @@ nav > ul > li > a {
     .searchbar {
         display: none;
     }
+    .max {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
     .card {
         width: 100%;
         height: 350px;
@@ -341,5 +347,32 @@ nav > ul > li > a {
     transition: fadeIn 0.5s;
 }
 
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .searchbar {
+        display: none;
+    }
+    .max {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .menu-icon > img {
+        width: 75px;
+    }
+    .card {
+        width: 100%;
+        height: 560px;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+}
 
 
