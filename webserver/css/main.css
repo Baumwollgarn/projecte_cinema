@@ -8,6 +8,7 @@ html {
 
 body {
     margin:0;
+    font-size: 2vw;
 }
 
 footer {
@@ -368,11 +369,28 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
     .card {
         width: 100%;
-        height: 560px;
+        height: 700px;
     }
     .card:hover {
         transform: scale(1.05);
     }
+
+    .max-mobile > a{
+        font-size: 6vw;
+    }
+    .max-mobile {
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+    .card > h3 {
+        font-size: 6vw;
+    }
+
+    .footer {
+        display: none;
+    }
+
+
 }
 
 

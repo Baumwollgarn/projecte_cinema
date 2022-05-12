@@ -5,12 +5,6 @@
     margin-bottom: 1em;
 }
 
-body {
-    background-image: url("../media/background.jpg");
-    backdrop-filter: blur(2px);
-
-}
-
 .form-main {
     display: flex;
     width: 400px;
@@ -58,4 +52,16 @@ body {
     cursor: pointer;
     background-color: rgba(173, 216, 230, 0.59);
     transition: all 0.5s;
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .container {
+        width: 100%;
+    }
+    .form-main {
+        width: 75%;
+    }
 }
