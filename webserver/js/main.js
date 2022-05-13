@@ -80,3 +80,17 @@ function closeMobileMenu() {
 }
 
 window.addEventListener("resize", closeMobileMenu);
+
+let language = document.getElementById("language-picker-select").valueOf();
+
+function changeLanguage (language) {
+    if (language === "español") {
+        
+    } else if (language === "english") {
+        
+    } else if (language === "catalan") {
+        
+    } else if (language === "deutsch") {
+        
+    }
+}

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Cinedom</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="icon" href="favicon.svg">
+    <link rel="icon" href="images/favicon.svg">
 </head>
 <body>
 <header>
+    <div class="language" style="display: none">Español</div>
     <div class="navbar flex-nav">
         <div>
             <a href=""><img src="./images/cinedom.png" alt="logo" class="logo"></a>
@@ -22,13 +23,27 @@
             <nav>
                 <ul>
                     <li class="max"><a href="index.html">Inici</a></li>
-                    <li class="max"><a href="billboard.html">Cartelera</a></li>
                     <li class="max"><a href="addcinema.html">Afegir cinema</a></li>
+                    <li class="language-selector-li">
+                        <div class="js">
+                            <div class="language-picker">
+                                <form action="" class="language-picker_form">
+                                    <label for="language-picker-select"></label>
+                                    <select name="language-picker-select" id="language-picker-select">
+                                        <option lang="es" value="español" selected>Español</option>
+                                        <option lang="en" value="english">English</option>
+                                        <option lang="ca" value="català">Català</option>
+                                        <option lang="de" value="deutsch">Deutsch</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
         <div class="menu-icon">
-            <img src="menu-icon.png" alt="menu-icon" onclick="openMobileMenu()">
+            <img src="images/menu-icon.png" alt="menu-icon" onclick="openMobileMenu()">
         </div>
 
     </div>
@@ -39,7 +54,6 @@
         <nav>
             <ul class="max-mobile-ul">
                 <li class="max-mobile"><a href="index.html">Inici</a></li>
-                <li class="max-mobile"><a href="billboard.html">Cartelera</a></li>
                 <li class="max-mobile"><a href="addcinema.html">Afegir cinema</a></li>
             </ul>
         </nav>
@@ -73,7 +87,8 @@
 
     <div class="grid movieCards">
         <div class="card" onclick="showShowTimes(1)">
-            <img src="https://sm.ign.com/ign_es/movie/d/doctor-str/doctor-strange-in-the-multiverse-of-madness_4pjr.jpg" alt="cine_1" class="card-image">
+            <img src="https://sm.ign.com/ign_es/movie/d/doctor-str/doctor-strange-in-the-multiverse-of-madness_4pjr.jpg"
+                 alt="cine_1" class="card-image">
             <h3 class="card-title">Doctor Strange</h3>
         </div>
         <div class="schedule" id="1">
@@ -91,7 +106,7 @@
                         <p class="schedule-item-time">12:00 - 14:00</p>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
         <div class="card" onclick="fetchSchedule(2)">
             <img src="https://picsum.photos/seed/cinema/700/1000" alt="cine_1" class="card-image">
@@ -115,7 +130,8 @@
             </div>
         </div>
         <div class="card" onclick="showSchedule(3)">
-            <img src="https://i0.wp.com/www.septimacaja.com/wp-content/uploads/the-northman-poster.jpg?fit=828%2C1169&ssl=1" alt="cine_1" class="card-image">
+            <img src="https://i0.wp.com/www.septimacaja.com/wp-content/uploads/the-northman-poster.jpg?fit=828%2C1169&ssl=1"
+                 alt="cine_1" class="card-image">
             <h3 class="card-title">The Northman</h3>
         </div>
         <div class="schedule" id="3">
@@ -136,7 +152,8 @@
             </div>
         </div>
         <div class="card" onclick="showSchedule(4)">
-            <img src="https://es.web.img2.acsta.net/pictures/19/05/27/12/17/3568868.jpg" alt="cine_1" class="card-image">
+            <img src="https://es.web.img2.acsta.net/pictures/19/05/27/12/17/3568868.jpg" alt="cine_1"
+                 class="card-image">
             <h3 class="card-title">Downtown Abbey</h3>
         </div>
         <div class="schedule" id="4">
@@ -157,7 +174,8 @@
             </div>
         </div>
         <div class="card" onclick="showSchedule(5)">
-            <img src="https://es.web.img2.acsta.net/pictures/22/02/28/16/18/2106533.jpg" alt="cine_1" class="card-image">
+            <img src="https://es.web.img2.acsta.net/pictures/22/02/28/16/18/2106533.jpg" alt="cine_1"
+                 class="card-image">
             <h3 class="card-title">La ciudad perdida</h3>
         </div>
         <div class="schedule" id="5">
@@ -178,7 +196,8 @@
             </div>
         </div>
         <div class="card" onclick="showSchedule(6)">
-            <img src="https://es.web.img3.acsta.net/pictures/22/02/18/10/20/5195258.jpg" alt="cine_1" class="card-image">
+            <img src="https://es.web.img3.acsta.net/pictures/22/02/18/10/20/5195258.jpg" alt="cine_1"
+                 class="card-image">
             <h3 class="card-title">Sonic 2</h3>
         </div>
         <div class="schedule" id="6">
@@ -199,7 +218,8 @@
             </div>
         </div>
         <div class="card" onclick="showSchedule(7)">
-            <img src="https://es.web.img3.acsta.net/pictures/22/02/17/11/51/4385135.jpg" alt="cine_1" class="card-image">
+            <img src="https://es.web.img3.acsta.net/pictures/22/02/17/11/51/4385135.jpg" alt="cine_1"
+                 class="card-image">
             <h3 class="card-title">Red Rocket</h3>
         </div>
         <div class="schedule" id="7">
@@ -220,7 +240,8 @@
             </div>
         </div>
         <div class="card" onclick="showSchedule(8)">
-            <img src="https://es.web.img3.acsta.net/pictures/22/03/16/13/03/4872294.jpg" alt="cine_1" class="card-image">
+            <img src="https://es.web.img3.acsta.net/pictures/22/03/16/13/03/4872294.jpg" alt="cine_1"
+                 class="card-image">
             <h3 class="card-title">X</h3>
         </div>
         <div class="schedule" id="8">

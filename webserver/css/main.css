@@ -65,6 +65,7 @@ nav > ul > li > a {
     text-decoration: none;
     color: black;
 }
+
 .search-icon {
     position: relative;
     right: -30px;
@@ -80,6 +81,11 @@ nav > ul > li > a {
 .search-bar:hover, .search-bar:focus {
     border: 2px solid #009688;
     background-color: white;
+}
+
+.language-selector > *{
+    height: 25px;
+    border-radius: 25px;
 }
 
 .card {
@@ -376,13 +382,16 @@ nav > ul > li > a {
     }
 }
 
- /* Media query for 900px or smaller displays where menu collapses */
-@media screen and (max-width: 900px) {
+ /* Media query for 950px or smaller displays where menu collapses */
+@media screen and (max-width: 950px) {
     .max {
         display: none;
     }
     .menu-icon {
         display: block;
+    }
+    .language-selector-li {
+        display: none;
     }
 }
 
@@ -468,5 +477,15 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .footer {
         display: none;
     }
+}
 
+#language-picker-select {
+    height: 30px;
+    border: none;
+    background-color: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
