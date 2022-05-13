@@ -5,6 +5,7 @@
     <title>Cinedom</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/addcinema.css">
+    <link rel="icon" href="favicon.svg">
 </head>
 <body>
 <header>
@@ -48,26 +49,30 @@
             <form action="" class="form-main">
                 <div class="form-group">
                     <label for="cinema-name">Nom del cinema</label>
-                    <input type="text" id="cinema-name" class="form-control">
+                    <input type="text" id="cinema-name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="cinema-address">Adreça del cinema</label>
-                    <input type="text" id="cinema-address" class="form-control">
+                    <input type="text" id="cinema-address" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="cinema-city">Ciutat del cinema</label>
-                    <input list="city" id="cinema-city" class="form-control">
+                    <input list="city" id="cinema-city" class="form-control" required>
                     <datalist id="city">
                         <option value="Barcelona">
                     </datalist>
                 </div>
                 <div class="form-group">
                     <label for="cinema-phone-number">Numero telèfon cinema</label>
-                    <input type="text" id="cinema-phone-number" class="form-control">
+                    <input type="text" id="cinema-phone-number" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="cinema-email">Email del cinema</label>
-                    <input type="text" id="cinema-email" class="form-control">
+                    <input type="text" id="cinema-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="cinema-multimedia">Multimèdia del cinema</label>
+                    <input type="file" id="cinema-multimedia" class="form-control" multiple>
                 </div>
                 <button type="submit" class="submit-btn">Afegir</button>
             </form>
@@ -76,26 +81,41 @@
 </main>
 <footer>
     <div class="footer">
-        <div class="subscribe">
-            <h3>Subscriu-te a la nostra newsletter</h3>
-            <form action="">
-                <input type="text" placeholder="Email" class="subscribe-bar">
-                <button type="submit" class="subscribe-button">Subscriure</button>
-            </form>
+        <div class="sub-footer">
+            <div class="subscribe">
+                <h3>Subscriu-te a la nostra newsletter</h3>
+                <form action="">
+                    <input type="text" placeholder="Email" class="subscribe-bar">
+                    <button type="submit" class="subscribe-button submit">Subscriure</button>
+                </form>
+            </div>
+            <div class="privacy">
+                <h3>Política de privacitat</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque euismod, nisi eu aliquet aliquet, nisl nisl
+                    euismod, nisi eu aliquet aliquet, nisl nisl
+
+                </p>
+            </div>
+            <div class="mini-nav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inici ></a></li>
+                        <li><a href="billboard.html">Cartelera ></a></li>
+                        <li><a href="addcinema.html">Afegir cinema ></a></li>
+                    </ul>
+                </nav>
+            </div>
+
         </div>
-        <div class="mini-nav">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inici</a></li>
-                    <li><a href="billboard.html">Cartelera</a></li>
-                    <li><a href="addcinema.html">Afegir cinema</a></li>
-                </ul>
-            </nav>
+        <hr>
+        <div>
+            <p class="copyright">Copyright © 2020 - Tots els drets reservats</p>
         </div>
     </div>
 </footer>
-
 <script src="./js/fetch-cities.js"></script>
-<script src="./js/main.js"></script></script>
+<script src="https://kit.fontawesome.com/08e234a004.js" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

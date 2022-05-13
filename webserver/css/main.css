@@ -8,9 +8,11 @@ html {
 
 body {
     margin:0;
-    font-size: 2vw;
+    font-size: 20px;
 }
-
+header {
+    box-shadow: #333333 0px 0px 10px;
+}
 footer {
     margin-top: 35px;
 }
@@ -65,7 +67,8 @@ nav > ul > li > a {
 }
 .search-icon {
     position: relative;
-    right: -25px;
+    right: -30px;
+    top: 3px;
 }
 
 .search-bar {
@@ -116,12 +119,75 @@ nav > ul > li > a {
     margin-left: auto;
 }
 
-.footer {
-    height: 150px;
+.sub-footer {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgba(78, 214, 255, 0.72);
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.sub-footer > * {
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-right: 25px;
+    flex-direction: column;
+
+}
+
+.footer {
+    font-size: 14px;
+    display: block;
+    background-color: rgb(56, 44, 44);
+    color: white;
+}
+
+.footer a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+.subscribe-bar {
+    width: 250px;
+    height: 25px;
+}
+
+.submit {
+    width: 150px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #505050;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 20px;
+
+    transition: 250ms;
+}
+
+.submit:hover {
+    transition: 500ms;
+    transform: scaleX(1.1) scaleY(1.1);
+
+    background: #AAAE7F;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 7px 7px 7px lightgreen;
+    text-shadow: none;
+}
+
+.privacy {
+    text-align: start;
+    width: 400px;
+}
+
+.copyright {
+    text-align: center;
+    height: 50px;
 }
 
 .mini-nav > nav > ul > li {
@@ -179,7 +245,7 @@ nav > ul > li > a {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    background-color: rgba(78, 214, 255, 0.99);
+    background-color: rgba(169, 234, 255, 0.99);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -284,6 +350,19 @@ nav > ul > li > a {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    /*.sub-footer {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .mini-nav {
+        text-align: start;
+    }
+
+    .copyright {
+        display: none;
+    }*/
 }
 
  /* Media query for 1000px or smaller displays */
@@ -390,7 +469,4 @@ and (-webkit-min-device-pixel-ratio: 2) {
         display: none;
     }
 
-
 }
-
-
