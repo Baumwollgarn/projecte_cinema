@@ -37,6 +37,7 @@ fetch('https://picsum.photos/v2/list?page=2&limit=13')
     .then(data => {
         for (const dataItem of data) {
             createCard(dataItem);
+            createRadioButton(dataItem);
         }
     })
 
@@ -54,6 +55,14 @@ function createCard(data) {
                `
     cardContent.appendChild(card);
     document.querySelector('.cinemas').appendChild(cardContent);
+}
+
+function createRadioButton(data) {
+        let option = document.createElement('option');
+        option.value = data.author;
+        option.innerHTML = data.author;
+        document.querySelector('.cinema-selector').appendChild(option);
+        
 }
 
 function openMobileMenu() {

@@ -61,7 +61,16 @@
     <div class="dark" id="dark"></div>
 
     <div class="showtimes" id="showTimes">
-        <h3 class="showtimes-title">Selecciona una sessio</h3>
+        <h3 class="showtimes-title">Selecciona un cine</h3>
+        <div class="cinema-selector-max">
+            <form action="" class="cinema-selector_form">
+                <label for="cinema-selector"></label>
+                <select name="cinema-selector" id="cinema-selector" class="cinema-selector">
+                    <option value="0" selected>Selecciona un cine</option>
+                </select>
+            </form>
+            </div>
+
         <div class="showtimes-content">
             <div class="showtimes-item">
                 <div class="showtimes-item-content">
@@ -83,10 +92,12 @@
             </div>
         </div>
         <i class="fa-solid fa-times close" onclick="hideShowTimes()"> Tancar</i>
+
+
     </div>
 
     <div class="grid movieCards">
-        <div class="card" onclick="showShowTimes(1)">
+        <div class="card" onclick="showShowTimes(1); createRadioButton()">
             <img src="https://sm.ign.com/ign_es/movie/d/doctor-str/doctor-strange-in-the-multiverse-of-madness_4pjr.jpg"
                  alt="cine_1" class="card-image">
             <h3 class="card-title">Doctor Strange</h3>
@@ -108,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <div class="card" onclick="fetchSchedule(2)">
+        <div class="card">
             <img src="https://picsum.photos/seed/cinema/700/1000" alt="cine_1" class="card-image">
             <h3 class="card-title">Alcarràs</h3>
         </div>
