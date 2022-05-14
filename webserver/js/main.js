@@ -47,6 +47,7 @@ cardContent.className = 'cinemas';
 function createCard(data) {
     let card = document.createElement('div');
     card.className = 'cinema-card';
+    card.addEventListener('click', createShowTimes(data.id))
     card.innerHTML = `
     <img src="${data.download_url}" alt="cine_1" class="cinema-image">
                 <h3 class="cinema-title">Cine ${data.author}</h3>
@@ -102,4 +103,12 @@ function changeLanguage (language) {
     } else if (language === "deutsch") {
         
     }
+}
+
+function createShowTimes (id) {
+    let showTimes = document.createElement('div');
+    showTimes.className = 'show-times';
+    showTimes.innerHTML = `
+    <h3 class="show-times-title">Show Times</h3>
+    `
 }
