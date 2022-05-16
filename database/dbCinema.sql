@@ -1,0 +1,207 @@
+CREATE DATABASE IF NOT EXISTS cinemas;
+
+USE cinemas;
+
+CREATE TABLE city(
+idCity INT AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY(idCity)
+);
+
+
+CREATE TABLE cinema(
+idCinema INT AUTO_INCREMENT,
+idCity INT,
+name VARCHAR(50) NOT NULL,
+address VARCHAR(50) NOT NULL,
+phoneNumber VARCHAR(15) NOT NULL,
+email VARCHAR(30) NOT NULL,
+location VARCHAR(255) NOT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY (idCinema),
+FOREIGN KEY (idCity) REFERENCES city(idCity) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+CREATE TABLE room(
+idRoomPK INT AUTO_INCREMENT PRIMARY KEY,
+idRoom INT,
+idCinema INT,
+/*RESTRICTIONS*/
+UNIQUE (idRoom, idCinema),
+FOREIGN KEY (idCinema) REFERENCES cinema(idCinema) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+CREATE TABLE seat(
+idSeatPK INT AUTO_INCREMENT PRIMARY KEY,
+idSeat INT NOT NULL,
+idRoomFK INT NOT NULL,
+rowNum INT NOT NULL,
+/*RESTRICTIONS*/
+UNIQUE (idSeat,idRoomFK,rowNum),
+FOREIGN KEY (idRoomFK) REFERENCES room(idRoomPK) ON UPDATE CASCADE 
+ON DELETE CASCADE
+);
+
+CREATE TABLE person(
+idPerson INT AUTO_INCREMENT,
+firstName VARCHAR(50) NOT NULL,
+lastName VARCHAR(50) NOT NULL,
+PRIMARY KEY(idPerson)
+);
+
+CREATE TABLE actor(
+idActor INT,
+/*RESTRICTIONS*/
+FOREIGN KEY (idActor) REFERENCES person(idPerson) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+CREATE TABLE director(
+idDirector INT,
+/*RESTRICTIONS*/
+FOREIGN KEY (idDirector) REFERENCES person(idPerson) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+CREATE TABLE country(
+idCountry INT AUTO_INCREMENT,
+countryCode VARCHAR(3),
+PRIMARY KEY(idCountry)
+);
+
+CREATE TABLE movie(
+idMovie INT AUTO_INCREMENT,
+idCountry INT,
+releaseDate DATE NOT NULL,
+duration TIME NOT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY (idMovie),
+FOREIGN KEY (idCountry) REFERENCES country(idCountry)
+);
+
+
+CREATE TABLE genre(
+idGenre INT AUTO_INCREMENT,
+PRIMARY KEY(idGenre)
+);
+
+CREATE TABLE movieGenre(
+idMovie INT,
+idGenre INT,
+PRIMARY KEY (idMovie, idGenre),
+FOREiGN KEY (idMovie) REFERENCES movie(idMovie) ON UPDATE CASCADE
+ON DELETE CASCADE,
+FOREIGN KEY (idGenre) REFERENCES genre(idGenre) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+
+
+CREATE TABLE actsIn(
+idActor INT,
+idMovie INT,
+paper ENUM ("Protagonist","Antagonist","Secondary") NOT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY (idActor, idMovie),
+FOREIGN KEY (idActor) REFERENCES actor(idActor) ON UPDATE CASCADE 
+ON DELETE CASCADE,
+FOREIGN KEY (idMovie) REFERENCES movie(idMovie) ON UPDATE CASCADE 
+ON DELETE CASCADE
+);
+
+CREATE TABLE directsIn(
+idDirector INT,
+idMovie INT,
+/*RESTRICTIONS*/
+PRIMARY KEY(idDirector, idMovie),
+FOREIGN KEY (idDirector) REFERENCES director(idDirector) ON UPDATE CASCADE 
+ON DELETE CASCADE,
+FOREIGN KEY (idMovie) REFERENCES movie(idMovie) ON UPDATE CASCADE 
+ON DELETE CASCADE
+);
+
+
+CREATE TABLE multimedia(
+idMultimedia INT AUTO_INCREMENT,
+idMovie INT,
+link VARCHAR(255) NOT NULL,
+typeOf enum("Image","Video") NOT NULL,
+priority INT NOT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY(idMultimedia),
+FOREIGN KEY (idMovie) REFERENCES movie(idMovie) ON UPDATE CASCADE 
+ON DELETE CASCADE
+);
+
+
+CREATE TABLE user(
+idUser INT AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+email VARCHAR(200) NOT NULL,
+identityNumber VARCHAR(20),
+zipCode VARCHAR(10) NOT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY (idUser),
+CONSTRAINT uc_id_user UNIQUE (idUser)
+);
+
+
+CREATE TABLE paymentMethod(
+idPaymentMethod INT AUTO_INCREMENT,
+typeMethod enum("CreditCard","Paypal"),
+email VARCHAR(200) NOT NULL,
+cardNumber VARCHAR(50) NULL,
+expireDate DATE NULL,
+CVV INT NULL,
+/*RESTRICTIONS*/
+PRIMARY KEY (idPaymentMethod)
+);
+
+CREATE TABLE billboard(
+idBillboard INT AUTO_INCREMENT,
+idMovie INT, 
+idRoom INT,
+startTime TIME,
+price DECIMAL,
+/*RESTRICTIONS*/
+PRIMARY KEY(idBillboard,idMovie,idRoom, startTime),
+FOREIGN KEY (idMovie) REFERENCES movie(idMovie) ON UPDATE CASCADE
+ON DELETE CASCADE,
+FOREIGN KEY (idRoom) REFERENCES room(idRoom) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+CREATE TABLE purchase(
+idPurchase INT AUTO_INCREMENT PRIMARY KEY,
+idBillboard INT,
+idUser INT,
+idRoomFK INT,
+idPaymentMethod INT,
+purchaseDate DATE,
+totalPrice DECIMAL NOT NULL,
+/*RESTRICTIONS*/
+UNIQUE (idUser,idPaymentMethod, purchaseDate),
+FOREIGN KEY (idBillboard) REFERENCES billboard(idBillboard) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (idUser) REFERENCES user(idUser) ON UPDATE CASCADE 
+ON DELETE CASCADE,
+FOREIGN KEY (idRoomFK) REFERENCES room(idRoomPK) ON UPDATE CASCADE
+ON DELETE CASCADE,
+FOREIGN KEY (idPaymentMethod) REFERENCES paymentMethod(idPaymentMethod) ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+#SET foreign_key_checks = 1;
+
+CREATE TABLE purchaseSeat(
+idPurchase INT,
+idSeatFK INT,
+PRIMARY KEY(idPurchase),
+FOREIGN KEY (idPurchase) REFERENCES purchase(idPurchase) ON UPDATE CASCADE 
+ON DELETE CASCADE,
+FOREIGN KEY (idSeatFK) REFERENCES seat(idSeatPK) ON UPDATE CASCADE 
+ON DELETE CASCADE
+);
+
