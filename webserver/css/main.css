@@ -86,11 +86,13 @@ footer {
     grid-area: ph;
 }
 
+
+
 .showtimes {
     width: 450px;
     height: 450px;
     display: none;
-    position: absolute;
+    position: fixed;
     border-radius: 40px;
     top: 50%;
     left: 50%;
@@ -114,12 +116,19 @@ footer {
     justify-content: center;
 }
 
+.st-unique {
+    display: none;
+}
+
 .dark {
     background-color: rgba(0,0,0,0.75);
     display: none;
-    position: absolute;
-    width: 5000px;
-    height: 5000px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 1500px;
+    width: 1500px;
     z-index: 5;
     animation: fadeIn 1s;
 }
@@ -334,4 +343,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.show-times {
+    position: absolute;
+    
 }
