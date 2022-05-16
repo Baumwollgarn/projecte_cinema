@@ -44,9 +44,10 @@ fetch('https://picsum.photos/v2/list?page=2&limit=13')
 let cardContent = document.createElement('div');
 cardContent.className = 'cinemas';
 
-function createCard(data) {
+function createCard(data,id) {
     let card = document.createElement('div');
     card.className = 'cinema-card';
+    card.id = data.id
     card.addEventListener('click', createShowTimes(data.id))
     card.innerHTML = `
     <img src="${data.download_url}" alt="cine_1" class="cinema-image">
@@ -104,6 +105,14 @@ function changeLanguage (language) {
         
     }
 }
+
+const cinema = document.querySelector('.cinema-card');
+
+cinema.addEventListener('click', function (e) {
+    if (e.target.classList.contains('cinema-card')) {
+        createShowTimes(e.target.id);
+    }
+});
 
 function createShowTimes (id) {
     let showTimes = document.createElement('div');
