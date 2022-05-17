@@ -42,6 +42,6 @@ services:
     volumes:
       - ./express:/app
     ports:
-      - '8081:80'
+      - '8081:3000'
     expose:
       - '8081'

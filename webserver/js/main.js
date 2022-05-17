@@ -18,34 +18,32 @@ function hideShowTimesCinema(id) {
     dark.style.display = "none";
 }
 
-function getMovies() {
-    fetch("/api/movies")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            let movies = data.movies;
-            let movieCards = document.getElementById("movieCards");
-            for (let i = 0; i < movies.length; i++) {
-                let movie = movies[i];
-                let card = document.createElement("div");
-                card.className = "card"
-                card.id = movie.id
-                card.innerHTML = `
-            <img src="${data.image}" alt="cine_1" class="card-image">
-            <h3 class="card-title">${data.title}</h3>
-            `;
-                movieCards.appendChild(card);
-            }
-        })
+function createMovieCard(movieData) {
+    let movieCard = document.createElement('div')
+    movieCard.className = "card"
+    movieCard.id = movieData.id
+    movieCard.innerHTML = `
+    <img src="${movieData.image}" alt="${movieData.title}" class="card-image">
+            <h3 class="card-title">${movieData.generic}</h3>`
+    document.querySelector('.movieCards').appendChild(movieCard)
 }
 
-fetch('https://picsum.photos/v2/list?page=2&limit=13')
+
+fetch ('http://localhost:8081/daw/select * from movie')
+    .then(function(response) {
+        return response.json();
+    })
+    .then (movieData => {
+        for (let i = 0; i < movieData.data.length; i++) {
+            createMovieCard(movieData.data[i]);
+        }
+    })
+
+fetch('http://localhost:8081/daw/select * from cinema')
     .then(response => response.json())
     .then(data => {
-        for (const dataItem of data) {
-            createCard(dataItem);
-            createRadioButton(dataItem);
+        for (let i = 0; i < data.data.length; i++) {
+            createCard(data.data[i]);
         }
     })
 
@@ -60,12 +58,12 @@ function createCard(data) {
         showShowTimesCinema(data.id)
     })
     card.innerHTML = `
-    <img src="${data.download_url}" alt="cine_1" class="cinema-image">
-                <h3 class="cinema-title">Cine ${data.author}</h3>
-                <p class="cinema-address">Carrer de la Rambla, 1, 08002 Barcelona</p>
-                <p class="cinema-phone">${data.width} ${data.height}</p>
-                    <div class="showtimes st-unique" id="schedule-${data.id}">
-        <h3 class="showtimes-title">Bienvenidos al ${data.author}</h3>
+    <img src="${data.image}" alt="cine_1" class="cinema-image">
+                <h3 class="cinema-title">${data.name}</h3>
+                <p class="cinema-address">${data.address}</p>
+                <p class="cinema-phone">${data.phoneNumber}</p>
+                    <div class="showtimes st-unique" id="schedule-${data.idCinema}">
+        <h3 class="showtimes-title">Bienvenidos al ${data.name}</h3>
         <div class="cinema-selector-max">
             <form action="" class="cinema-selector_form">
                 <label for="movie-selector"></label>
@@ -134,6 +132,7 @@ function closeMobileMenu() {
 }
 
 window.addEventListener("resize", closeMobileMenu);
+/*
 
 let language = document.getElementById("language-picker-select").valueOf();
 
@@ -150,6 +149,7 @@ function changeLanguage (language) {
 }
 
 const cinema = document.querySelector('.cinema-card');
+*/
 
 /*cinema.addEventListener('click', function (e) {
     if (e.target.classList.contains('cinema-card')) {
@@ -192,7 +192,7 @@ function showShowTimesCinema(id) {
     dark.style.display = "flex";
 }
 
-fetch ('http://localhost:3000/select * from cinema')
+fetch ('http://localhost:8081/daw/select * from cinema')
     .then(response => response.json())
     .then(data => {
         data.forEach(cinema => {
