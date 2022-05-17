@@ -1,12 +1,21 @@
 // Function to hide "showTimes"
-function hideShowTimes() {
+function hideShowTimes(id) {
     document.getElementById("showTimes").style.display = "none";
     document.getElementById("dark").style.display = "none";
+    document.getElementById("schedule-" + {id}).style.display = "none";
 }
 
 function showShowTimes(id) {
     document.getElementById("showTimes").style.display = "flex";
     document.getElementById("dark").style.display = "flex";
+}
+
+function hideShowTimesCinema(id) {
+    let schedule = document.querySelector(`#schedule-${id}`);
+    let dark = document.querySelector('.dark');
+
+    schedule.style.display = "none";
+    dark.style.display = "none";
 }
 
 function getMovies() {
@@ -48,9 +57,6 @@ function createCard(data) {
     card.className = 'cinema-card';
     card.id = data.id
     card.addEventListener('click', function (e) {
-        createShowTimes(data.id);
-    });
-    card.addEventListener('click', function (e) {
         showShowTimesCinema(data.id)
     })
     card.innerHTML = `
@@ -89,7 +95,7 @@ function createCard(data) {
                 </div>
             </div>
         </div>
-        <i class="fa-solid fa-times close" onclick="hideShowTimes()"> Tancar</i>
+        <i class="fa-solid fa-times close" onclick="hideShowTimesCinema(${data.id})"> Tancar</i>
     </div>
                `
     cardContent.appendChild(card);
@@ -178,15 +184,29 @@ const cinema = document.querySelector('.cinema-card');
 }*/
 
 function showShowTimesCinema(id) {
-    
+
     let schedule = document.querySelector(`#schedule-${id}`);
     let dark = document.querySelector('.dark');
-
-    if (schedule.style.display === "none") {
-        schedule.style.display = "flex";
-        dark.style.display = "flex";
-    } else {
-        schedule.style.display = "none";
-        dark.style.display = "none";
-    }   
+    
+    schedule.style.display = "flex";
+    dark.style.display = "flex";
 }
+
+fetch ('http://localhost:3000/select * from cinema')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(cinema => {
+            let cinemaCard = document.createElement('div');
+            cinemaCard.className = 'cinema-card';
+            cinemaCard.id = cinema.id;
+            cinemaCard.innerHTML = `
+            <div class="cinema-card-content">
+                <h3 class="cinema-card-title">${cinema.name}</h3>
+                <p class="cinema-card-address">${cinema.address}</p>
+                <p class="cinema-card-phone">${cinema.phoneNumber}</p>
+            </div>
+            `
+            document.querySelector('.cinemas').appendChild(cinemaCard);
+        });
+    })
+    .catch(error => console.log(error));
