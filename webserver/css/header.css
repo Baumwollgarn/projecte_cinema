@@ -27,21 +27,18 @@ nav > ul > li {
     padding: 0;
     list-style: none;
     font-size: 20px;
+
+    transition: 300ms;
 }
 
 nav > ul > li.max:hover {
-    animation: spin360 1s ease-in-out infinite;
-    transition: transform 1s
+    transition: 400ms;
+    transform: scaleX(1.1) scaleY(1.1);
+    border-radius: 50px;
+    font-weight: bold;
+
 }
 
-@keyframes spin360 {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
 
 nav > ul > li > a {
     text-decoration: none;
@@ -69,3 +66,4 @@ nav > ul > li > a {
     height: 25px;
     border-radius: 25px;
 }
+

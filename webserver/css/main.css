@@ -178,6 +178,8 @@ footer {
 .cinema-card {
     scroll-snap-align: start;
     cursor: pointer;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .cinema-card > img {
