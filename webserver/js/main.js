@@ -171,6 +171,22 @@ function closeAll() {
     trailerCard.forEach(card => {
         card.style.display = "none";
     });
-    
 }
 
+
+fetch('http://localhost:8081/daw/SELECT idMovie,generic FROM movie;')
+    .then(response => response.json())
+    .then(moviedata2 => {
+        for (let i = 0; i < moviedata2.data.length; i++) {
+            addMovieOption(moviedata2.data[i]);
+        }
+    })
+    .catch(error => console.log(error))
+
+let addMovieOption = (movie) => {
+    let movieSelect = document.querySelector('#movie-selector');
+    let option = document.createElement('option');
+    option.value = movie.idMovie;
+    option.innerHTML = movie.generic;
+    movieSelect.appendChild(option);
+}
