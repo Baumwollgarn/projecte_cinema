@@ -131,8 +131,8 @@ footer {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    height: 1500px;
-    width: 1500px;
+    height: 15000px;
+    width: 2000px;
     z-index: 5;
     animation: fadeIn 1s;
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/trailer.css">
     <link rel="icon" href="images/favicon.svg">
 </head>
 <body>
@@ -51,7 +52,7 @@
     </div>
 </header>
 
-<main onload="">
+<main>
     <div class="menu-mobile-content closed" id="menu-mobile-content">
         <nav>
             <ul class="max-mobile-ul">
@@ -60,7 +61,7 @@
             </ul>
         </nav>
     </div>
-    <div class="dark" id="dark"></div>
+    <div class="dark" id="dark" onclick="closeAll()"></div>
 
     <div class="showtimes" id="showTimes">
         <h3 class="showtimes-title">Selecciona un cine</h3>
@@ -99,6 +100,7 @@
     </div>
     <div class="grid movieCards">
     </div>
+    <div class="trailerPopUp"></div>
     <h2 class="cinemas-title">Cinemas</h2>
 
     <div class="cinemas-container">
@@ -144,5 +146,6 @@
 </footer>
 <script src="https://kit.fontawesome.com/08e234a004.js" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script src="js/trailerPopUp.js"></script>
 </body>
 </html>

@@ -12,16 +12,6 @@ function showShowTimes(id) {
 
 
 
-function createMovieCard(movieData) {
-    let movieCard = document.createElement('div')
-    movieCard.className = "card"
-    movieCard.id = movieData.id
-    movieCard.innerHTML = `
-    <img src="${movieData.image}" alt="${movieData.title}" class="card-image">
-            <h3 class="card-title">${movieData.generic}</h3>`
-    document.querySelector('.movieCards').appendChild(movieCard)
-}
-
 
 fetch('http://localhost:8081/daw/select * from movie')
     .then(function (response) {
@@ -38,8 +28,20 @@ fetch('http://localhost:8081/daw/select * from cinema')
     .then(data => {
         for (let i = 0; i < data.data.length; i++) {
             createCard(data.data[i]);
+            
         }
     })
+
+function createMovieCard(movieData) {
+    let movieCard = document.createElement('div')
+    movieCard.className = "card"
+    movieCard.id = movieData.idMovie
+    movieCard.innerHTML = `
+    <img src="${movieData.image}" alt="${movieData.generic}" class="card-image" onclick="openTrailerPopUp(${movieData.idMovie})">
+            <h3 class="card-title">${movieData.generic}</h3>`
+    document.querySelector('.movieCards').appendChild(movieCard)
+    
+}
 
 let cardContent = document.createElement('div');
 cardContent.className = 'cinemas';
@@ -87,7 +89,6 @@ function createCard(data) {
                 </div>
             </div>
         </div>
-        <i class="fa-solid fa-times close" onclick="hideShowTimesCinema(${data.idCinema})"> Tancar</i>
     </div>
                `
     cardContent.appendChild(card);
@@ -157,3 +158,19 @@ function hideShowTimesCinema(id) {
     schedule.style.display = "none";
     dark.style.display = "none";
 }
+
+function closeAll() {
+    let schedule = document.querySelectorAll(`.st-unique`)
+    let dark = document.querySelector('.dark')
+    let trailerCard = document.querySelectorAll('.trailerCard');
+    
+    schedule.forEach(schedule => {
+        schedule.style.display = "none";
+    });
+    dark.style.display = "none";
+    trailerCard.forEach(card => {
+        card.style.display = "none";
+    });
+    
+}
+
