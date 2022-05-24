@@ -11,7 +11,7 @@ body {
     font-size: 20px;
 }
 header {
-    box-shadow: #333333 0px 0px 10px;
+    box-shadow: #333333 0 0 10px;
 }
 footer {
     margin-top: 35px;
@@ -94,7 +94,7 @@ footer {
     display: none;
     position: fixed;
     border-radius: 40px;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
@@ -114,6 +114,10 @@ footer {
 .showtimes-item {
     margin-right: 15px;
     justify-content: center;
+}
+.showtimes-title {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .st-unique {
@@ -217,22 +221,9 @@ footer {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    /*.sub-footer {
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .mini-nav {
-        text-align: start;
-    }
-
-    .copyright {
-        display: none;
-    }*/
 }
 
- /* Media query for 1000px or smaller displays */
+ /* Media query for 1065px or smaller displays */
 @media screen and (max-width: 1065px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -353,5 +344,41 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
 .show-times {
     position: absolute;
-    
+}
+
+.cinema-selector_form > select {
+    background-color: #5aaaf8;
+    height: 35px;
+    width: 400px;
+    margin-bottom: 35px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.submit-button {
+    background-color: #5dc1ec;
+    height: 35px;
+    width: 250px;
+    display: block;
+    margin: 70px auto 35px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    transition: 500ms;
+    box-shadow:
+    #bfbaff 4px 4px,
+    #ffdef7 8px 8px;
+}
+
+.submit-button:hover {
+    background-color: #5aaaf8;
+    transform: scale(1.05);
+    transition: 500ms;
+    box-shadow:
+    #bfbaff 8px 8px,
+    #ffdef7 12px 12px;
 }
