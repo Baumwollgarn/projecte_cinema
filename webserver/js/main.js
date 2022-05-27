@@ -1,20 +1,3 @@
-/*
-function createMovOpt (moviedata2) {
-    for (let i = 0; i < moviedata2.data.length; i++) {
-        let option = document.createElement("option");
-        option.innerHTML = moviedata2.data[i].generic;
-        option.value = moviedata2.data[i].idMovie;
-    }
-}
-
-fetch('http://localhost:8081/daw/select idMovie, generic from movie;')
-    .then(response => response.json())
-    .then(moviedata2 => {
-        createMovOpt(moviedata2);
-    })
-    .catch(error => console.log(error));
-*/
-
 function createMovieCard(movieData) {
     let movieCard = document.createElement('div')
     movieCard.className = "card"
@@ -23,7 +6,6 @@ function createMovieCard(movieData) {
     <img src="${movieData.image}" alt="${movieData.generic}" class="card-image" onclick="openTrailerPopUp(${movieData.idMovie})">
             <h3 class="card-title">${movieData.generic}</h3>`
     document.querySelector('.movieCards').appendChild(movieCard)
-
 }
 
 let cardContent = document.createElement('div');

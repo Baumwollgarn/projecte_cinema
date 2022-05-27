@@ -25,7 +25,7 @@ function openMobileMenu() {
 }
 
 function closeMobileMenu() {
-    if (document.getElementById("menu-mobile-content").style.display === "block" && window.innerWidth > 900) {
+    if (document.getElementById("menu-mobile-content").style.display === "block" && window.innerWidth > 950) {
         document.getElementById("menu-mobile-content").style.display = "none";
         document.getElementById("menu-mobile-content").classList.remove("open");
         document.getElementById("menu-mobile-content").classList.add("closed");
