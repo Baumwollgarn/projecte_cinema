@@ -68,10 +68,17 @@ footer {
     margin-top: 50px;
 }
 
+.top-rated-movie {
+    display:flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
 .top-rated-movie > img {
     width: 75px;
     object-fit: cover;
     text-align: center;
+    margin-right: 5px;
 }
 
 .full {

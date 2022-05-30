@@ -15,7 +15,7 @@ function createCard(data) {
     let card = document.createElement('div');
     card.className = 'cinema-card';
     card.id = data.idCinema
-    card.addEventListener('click', function (e) {
+    card.addEventListener('click', function () {
         showShowTimesCinema(data.idCinema)
     })
     card.innerHTML = `
