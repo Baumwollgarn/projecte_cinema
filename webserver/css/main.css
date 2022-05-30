@@ -63,9 +63,23 @@ footer {
 }
 
 .recommended {
-    width: 10%;
+    width: 20%;
     position: relative;
     margin-top: 50px;
+}
+
+.top-rated-movie > img {
+    width: 75px;
+    object-fit: cover;
+    text-align: center;
+}
+
+.full {
+    color: #ffd700;
+}
+
+.half {
+    color: #ffd700;
 }
 
 .flex {
@@ -396,10 +410,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 .submit-button:hover {
-    background-color: #5aaaf8;
     transform: scale(1.05);
+
+    background-color: #5aaaf8;
     transition: 500ms;
     box-shadow:
     #bfbaff 8px 8px,
-    #ffdef7 12px 12px;
+    #ffdef7 14px 14px;
 }
+

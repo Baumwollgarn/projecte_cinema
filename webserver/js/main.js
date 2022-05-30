@@ -53,26 +53,6 @@ function createCard(data) {
     document.querySelector('.cinemas').appendChild(cardContent);
 }
 
-fetch('http://localhost:8081/daw/select * from cinema')
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(cinema => {
-            let cinemaCard = document.createElement('div');
-            cinemaCard.className = 'cinema-card';
-            cinemaCard.id = cinema.id;
-            cinemaCard.innerHTML = `
-            <div class="cinema-card-content">
-                <h3 class="cinema-card-title">${cinema.name}</h3>
-                <p class="cinema-card-address">${cinema.address}</p>
-                <p class="cinema-card-phone">${cinema.phoneNumber}</p>
-            </div>
-            `
-            document.querySelector('.cinemas').appendChild(cinemaCard);
-        });
-    })
-    .catch(error => console.log(error));
-
-
 fetch('http://localhost:8081/daw/select * from movie')
     .then(function (response) {
         return response.json();
@@ -83,7 +63,7 @@ fetch('http://localhost:8081/daw/select * from movie')
         }
     })
 
-fetch('http://localhost:8081/daw/select * from cinema')
+fetch('http://localhost:8081/daw/select * from cinema order by name')
     .then(response => response.json())
     .then(data => {
         for (let i = 0; i < data.data.length; i++) {
@@ -105,6 +85,99 @@ fetch('http://localhost:8081/daw/select * from cinema')
                 .catch(error => console.log(error));
         });
     })
+    .catch(error => console.log(error));
+
+fetch('http://localhost:8081/daw/SELECT * FROM `movie` ORDER BY `movie`.`rating` DESC LIMIT 5\n')
+    .then(response => response.json())
+    .then(data => {
+        let topRated = document.querySelector('.recommended');
+        data.data.forEach(movie => {
+            topRated.innerHTML += `
+            <div class="top-rated-movie">
+                <img src="${movie.image}" alt="${movie.idMovie}">
+                <div>
+                <div class="movie-title">${movie.generic}</div>
+                <span class="star-${movie.id} fa full"></span>
+                <span class="star-${movie.id} fa full"></span>
+                <span class="star-${movie.id} fa full"></span>
+                <span class="star-${movie.id} fa full"></span>
+                <span class="star-${movie.id} fa full"></span>
+                 </div>
+            </div>
+            `
+        });
+    })
+    .then(() =>
+        document.querySelectorAll('.top-rated-movie').forEach(movie => {
+        let idMovie = movie.children[0].getAttribute('alt');
+        fetch(`http://localhost:8081/daw/select * from movie where idMovie = "${idMovie}"`)
+            .then(response => response.json())
+            .then(data => {
+                let rating = data.data[0].rating;
+                console.log(rating);
+                if (rating === 1) {
+                    movie.children[1].children[1].classList.add('fa-star-half-o');
+                    movie.children[1].children[2].classList.add('fa-star-o');
+                    movie.children[1].children[3].classList.add('fa-star-o');
+                    movie.children[1].children[4].classList.add('fa-star-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 2) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star-o');
+                    movie.children[1].children[3].classList.add('fa-star-o');
+                    movie.children[1].children[4].classList.add('fa-star-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 3) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star-half-o');
+                    movie.children[1].children[3].classList.add('fa-star-o');
+                    movie.children[1].children[4].classList.add('fa-star-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 4) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star-o');
+                    movie.children[1].children[4].classList.add('fa-star-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 5) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star-half-o');
+                    movie.children[1].children[4].classList.add('fa-star-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 6) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star');
+                    movie.children[1].children[4].classList.add('fa-star-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 7) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star');
+                    movie.children[1].children[4].classList.add('fa-star-half-o');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 8) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star');
+                    movie.children[1].children[4].classList.add('fa-star');
+                    movie.children[1].children[5].classList.add('fa-star-o');
+                } else if (rating === 9) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star');
+                    movie.children[1].children[4].classList.add('fa-star');
+                    movie.children[1].children[5].classList.add('fa-star-half-o');
+                } else if (rating === 10) {
+                    movie.children[1].children[1].classList.add('fa-star');
+                    movie.children[1].children[2].classList.add('fa-star');
+                    movie.children[1].children[3].classList.add('fa-star');
+                    movie.children[1].children[4].classList.add('fa-star');
+                    movie.children[1].children[5].classList.add('fa-star');
+                }
+            })
+    }))
     .catch(error => console.log(error));
 
 
