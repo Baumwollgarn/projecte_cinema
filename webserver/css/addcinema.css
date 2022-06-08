@@ -39,6 +39,7 @@
     font-size: 20px;
 }
 
+
 .form-group > input {
     width: 220px;
     height: 40px;
@@ -48,8 +49,8 @@
     padding: 0 10px;
     font-size: 14px;
     background-color: rgb(255, 255, 255);
+    caret-color: #5aaaf8;
 }
-
 
 .filebtn {
     display: none;
@@ -80,27 +81,41 @@
 
 
 .submit-btn {
-    width: 50%;
-    height: 40px;
+    width: 35%;
+    height: 50px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 0 10px;
     font-size: 20px;
     margin-top: 20px;
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(98, 182, 105);
     transition: all 0.5s;
 }
 
 .submit-btn:hover {
     cursor: pointer;
-    color:rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    transition: all 0.5s;
+    transform: scale(1.05);
 } 
 
+.reset-btn {
+    width: 35%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 20px;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(204, 52, 52);
+    transition: all 0.5s;
+}
 
- @media only screen 
+.reset-btn:hover {
+    transform: scale(1.05);
+
+}
+@media only screen
 and (max-width: 720px) {
     .container {
         width: 100%;
