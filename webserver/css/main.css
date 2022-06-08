@@ -326,7 +326,6 @@ footer {
     border-radius: 40px;
 }
 .max-mobile > a:hover {
-    background-color: rgba(78, 214, 255, 0.50);
     transition: fadeIn 0.5s;
 }
 

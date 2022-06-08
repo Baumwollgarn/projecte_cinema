@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Cinedom</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/addcinema.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/addcinema.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="icon" href="images/favicon.svg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -15,7 +15,7 @@
     <div class="language" style="display: none">Español</div>
     <div class="navbar flex-nav">
         <div>
-            <a href=""><img src="images/cinedom.png" alt="logo" class="logo"></a>
+            <a href=""><img src="./images/cinedom.png" alt="logo" class="logo"></a>
         </div>
         <div class="searchbar">
             <form action="">
@@ -97,10 +97,8 @@
                     <label class="file-label" for="cinema-multimedia"> <i class="material-icons">file_upload</i>MULTIMÈDIA</label>
                     <input type="file" id="cinema-multimedia" class="form-control filebtn" multiple>
                 </div>
-
             </div>
                 <button type="submit" class="submit-btn">Afegir</button>
-                <button type="reset" class="reset-btn">Reset</button>
             </form>
         </div>
     </div>
@@ -127,6 +125,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Inici ></a></li>
+                        <li><a href="billboard.html">Cartelera ></a></li>
                         <li><a href="addcinema.html">Afegir cinema ></a></li>
                     </ul>
                 </nav>
@@ -139,9 +138,8 @@
         </div>
     </div>
 </footer>
-<script src="js/fetch-cities.js"></script>
+<script src="./js/fetch-cities.js"></script>
 <script src="https://kit.fontawesome.com/08e234a004.js" crossorigin="anonymous"></script>
-<script src="js/insertForm.js"></script>
-<script src="js/layout.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
