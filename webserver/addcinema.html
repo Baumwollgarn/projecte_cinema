@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="icon" href="images/favicon.svg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="language" style="display: none">Español</div>
     <div class="navbar flex-nav">
         <div>
-            <a href="index.html"><img src="./images/cinedom.png" alt="logo" class="logo"></a>
+            <a href=""><img src="./images/cinedom.png" alt="logo" class="logo"></a>
         </div>
         <div class="searchbar">
             <form action="">
@@ -62,36 +63,42 @@
     </div>
     <div class="container">
         <div class="addcinema">
-            <h1 onclick="getFormValues()">Afegir cinema</h1>
-            <form action="" class="form-main" id="insertForm">
+            <h1>AFEGIR CINEMA</h1>
+            <form action="" class="form-main">
+                <div class="line-one">
                 <div class="form-group">
-                    <label for="cinema-name">Nom del cinema</label>
+                    <label for="cinema-name">NOM DEL CINEMA</label>
                     <input type="text" id="cinema-name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="cinema-address">Adreça del cinema</label>
+                    <label for="cinema-address">ADREÇA DEL CINEMA</label>
                     <input type="text" id="cinema-address" class="form-control" required>
                 </div>
+            </div>
+            <div class="line-two">
                 <div class="form-group">
-                    <label for="cinema-city">Ciutat del cinema</label>
+                    <label for="cinema-city">CIUTAT DEL CINEMA</label>
                     <input list="city" id="cinema-city" class="form-control" required>
                     <datalist id="city">
                         <option value="Barcelona">
                     </datalist>
                 </div>
                 <div class="form-group">
-                    <label for="cinema-phone-number">Numero telèfon cinema</label>
+                    <label for="cinema-phone-number">Nº TELÈFON DEL CINEMA</label>
                     <input type="text" id="cinema-phone-number" class="form-control" required>
                 </div>
+            </div>
+            <div class="line-three">
                 <div class="form-group">
-                    <label for="cinema-email">Email del cinema</label>
+                    <label for="cinema-email">EMAIL DEL CINEMA</label>
                     <input type="text" id="cinema-email" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="cinema-multimedia">Multimèdia del cinema</label>
-                    <input type="file" id="cinema-multimedia" class="form-control" multiple>
+                    <label class="file-label" for="cinema-multimedia"> <i class="material-icons">file_upload</i>MULTIMÈDIA</label>
+                    <input type="file" id="cinema-multimedia" class="form-control filebtn" multiple>
                 </div>
-                <button type="submit" class="submit-btn" onclick="getFormValues()">Afegir</button>
+            </div>
+                <button type="submit" class="submit-btn">Afegir</button>
             </form>
         </div>
     </div>
@@ -118,6 +125,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Inici ></a></li>
+                        <li><a href="billboard.html">Cartelera ></a></li>
                         <li><a href="addcinema.html">Afegir cinema ></a></li>
                     </ul>
                 </nav>
@@ -132,6 +140,6 @@
 </footer>
 <script src="./js/fetch-cities.js"></script>
 <script src="https://kit.fontawesome.com/08e234a004.js" crossorigin="anonymous"></script>
-<script src="./js/insertForm.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
