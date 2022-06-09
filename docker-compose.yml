@@ -10,7 +10,7 @@ services:
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'user123'
     volumes:
-      - ./database:/var/lib/mysql
+      - ./mysql-dump:/docker-entrypoint-initdb.d
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

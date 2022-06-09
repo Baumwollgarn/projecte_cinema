@@ -1,5 +1,4 @@
 // Fetch all the cities from the database and return them as a JSON object
-
     fetch('http://localhost:8081/daw/SELECT * FROM city')
     .then(response => response.json())
     .then(cities => {
