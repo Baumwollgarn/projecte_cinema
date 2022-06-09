@@ -10,7 +10,7 @@ Everything should just work as fine as it did on my machine.
 We got the challenge to code front-end and the database by our own, including design guidelines for both of them.
 The SQL diagram and design is following: 
 
-![Esta es una imagen](/database/design.png)
+![Esta es una imagen](/database/diagram.png)
 
 
 After we had the design for the database we got our hands on the website and its parts. We've seperated header, main and footer and made 2 main sites:
