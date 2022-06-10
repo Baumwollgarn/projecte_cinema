@@ -7,6 +7,7 @@ function getFormValues() {
         phone: document.forms["insertForm"]["cinema-phone-number"].value,
         email: document.forms["insertForm"]["cinema-email"].value,
     }
+    
     console.log(cinema);
     // Send the cinema to the server
     fetch(`http://localhost:8081/daw/INSERT INTO cinema (name, address, idCity, phoneNumber, email)\nVALUES ("${cinema.name}","${cinema.address}",${cinema.city},"${cinema.phone}","${cinema.email}")`)
