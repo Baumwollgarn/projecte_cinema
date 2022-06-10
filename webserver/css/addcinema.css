@@ -41,7 +41,7 @@
 }
 
 
-.form-group > input {
+.form-group > input, select {
     width: 220px;
     height: 40px;
     outline: none;

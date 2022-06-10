@@ -310,6 +310,14 @@ footer {
     .grid {
         width: 100%;
     }
+
+    .recommended {
+        width: 100%;
+        position: relative;
+        margin-top: 50px;
+        margin-left: 50px;
+        margin-right: auto;
+    }
 }
 
 .animated {
@@ -370,6 +378,8 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .footer {
         display: none;
     }
+
+
 }
 
 #language-picker-select {
@@ -424,4 +434,25 @@ and (-webkit-min-device-pixel-ratio: 2) {
     #bfbaff 8px 8px,
     #ffdef7 14px 14px;
 }
+
+.scroll-left {
+        border-radius: 5px;
+        overflow: hidden;
+}
+
+.scroll-left {
+    transform: translateX(100%);
+    text-decoration: underline black 2px;
+    animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 

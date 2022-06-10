@@ -15,10 +15,10 @@
     <div class="language" style="display: none">Español</div>
     <div class="navbar flex-nav">
         <div>
-            <a href=""><img src="./images/cinedom.png" alt="logo" class="logo"></a>
+            <a href="index.html"><img src="./images/cinedom.png" alt="logo" class="logo"></a>
         </div>
         <div class="searchbar">
-            <form action="">
+            <form action="error404.html">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" placeholder="Cercar" class="search-bar">
             </form>
@@ -78,11 +78,10 @@
             </div>
             <div class="line-two">
                 <div class="form-group">
-                    <label for="cinema-city">CIUTAT DEL CINEMA</label>
-                    <input list="city" id="cinema-city" class="form-control" required>
-                    <datalist id="city">
+                    <label for="city">CIUTAT DEL CINEMA</label>
+                    <select id="city" class="form-control" required>
                         <option value="Barcelona">
-                    </datalist>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="cinema-phone-number">Nº TELÈFON DEL CINEMA</label>
