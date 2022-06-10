@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/footer.css">
+<link rel="stylesheet" href="./css/trailer.css">
+<link rel="stylesheet" href="./css/404.css">
+<link rel="icon" href="images/favicon.svg">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 404</title>
+</head>
+<body>
+<header>
+    <div class="language" style="display: none">Español</div>
+    <div class="navbar flex-nav">
+        <div>
+            <a href="index.html"><img src="./images/cinedom.png" alt="logo" class="logo"></a>
+        </div>
+        <div class="searchbar">
+            <form action="">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Cercar" class="search-bar">
+            </form>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li class="max"><a href="index.html">Inici</a></li>
+                    <li class="max"><a href="addcinema.html">Afegir cinema</a></li>
+                    <li class="language-selector-li">
+                        <div class="js">
+                            <div class="language-picker">
+                                <form action="" class="language-picker_form">
+                                    <label for="language-picker-select"></label>
+                                    <select name="language-picker-select" id="language-picker-select">
+                                        <option lang="es" value="español" selected>Español</option>
+                                        <option lang="en" value="english">English</option>
+                                        <option lang="ca" value="català">Català</option>
+                                        <option lang="de" value="deutsch">Deutsch</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-icon">
+            <img src="images/menu-icon.png" alt="menu-icon" onclick="openMobileMenu()">
+        </div>
+
+    </div>
+</header>
+
+<p class="zoom-area"> La pàgina que cerques no s'ha pogut trobar.</p>
+<section class="error-container">
+    <span><span>4</span></span>
+    <span>0</span>
+    <span><span>4</span></span>
+</section>
+
+<div class="link-container">
+    <a href="index.html" class="more-link">Tornar al inici</a>
+</div>
+<footer>
+    <div class="footer">
+        <div class="sub-footer">
+            <div class="subscribe">
+                <h3>Subscriu-te a la nostra newsletter</h3>
+                <form action="">
+                    <input type="text" placeholder="Email" class="subscribe-bar">
+                    <button type="submit" class="subscribe-button submit">Subscriure</button>
+                </form>
+            </div>
+            <div class="privacy">
+                <h3>Política de privacitat</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque euismod, nisi eu aliquet aliquet, nisl nisl
+                    euismod, nisi eu aliquet aliquet, nisl nisl
+
+                </p>
+            </div>
+            <div class="mini-nav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inici ></a></li>
+                        <li><a href="addcinema.html">Afegir cinema ></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <hr>
+        <div>
+            <p class="copyright">Copyright © 2020 - Tots els drets reservats</p>
+        </div>
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/08e234a004.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/trailerPopUp.js"></script>
+<script src="js/layout.js"></script>
+</body>
+</html>
