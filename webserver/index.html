@@ -11,7 +11,6 @@
 </head>
 <body>
 <header>
-    <div class="language" style="display: none">Español</div>
     <div class="navbar flex-nav">
         <div>
             <a href="index.html"><img src="./images/cinedom.png" alt="logo" class="logo"></a>
@@ -48,10 +47,8 @@
         <div class="menu-icon">
             <img src="images/menu-icon.png" alt="menu-icon" onclick="openMobileMenu()">
         </div>
-
     </div>
 </header>
-
 <main>
     <div class="menu-mobile-content closed" id="menu-mobile-content">
         <nav>
@@ -61,63 +58,22 @@
             </ul>
         </nav>
     </div>
-    <div class="dark" id="dark" onclick="closeAll()"></div>
-
-    <div class="showtimes" id="showTimes">
-        <h3 class="showtimes-title">Selecciona un cine</h3>
-        <div class="cinema-selector-max">
-            <form action="" class="cinema-selector_form">
-                <label for="cinema-selector"></label>
-                <select name="cinema-selector" id="cinema-selector" class="cinema-selector">
-                    <option value="0" selected>Selecciona un cine</option>
-                </select>
-            </form>
-        </div>
-
-        <div class="showtimes-content">
-            <div class="showtimes-item">
-                <div class="showtimes-item-content">
-                    <h4 class="showtimes-item-title">Sessio 1</h4>
-                    <p class="showtimes-item-time">10:00 - 12:00</p>
-                </div>
-            </div>
-            <div class="showtimes-item">
-                <div class="showtimes-item-content">
-                    <h4 class="showtimes-item-title">Sessio 2</h4>
-                    <p class="showtimes-item-time">12:00 - 14:00</p>
-                </div>
-            </div>
-            <div class="showtimes-item">
-                <div class="showtimes-item-content">
-                    <h4 class="showtimes-item-title">Sessio 3</h4>
-                    <p class="showtimes-item-time">14:00 - 16:00</p>
-                </div>
-            </div>
-        </div>
-        <i class="fa-solid fa-times close" onclick="hideShowTimes()"> Tancar</i>
-
-
-    </div>
-    <div>
+    <div class="dark" id="dark" onclick="closeAll(); stopAllYouTubeVideos();"></div>
+    <div class="scroll-container">
         <p class="scroll-left">Aconsegueix un descompte de 10% a la primera compra! Envia un WhatsApp al 699 456 192 amb el missatge "Quiero aprobar!"</p>
     </div>
     <div class="flex">
-
         <div class="grid movieCards">
         </div>
         <aside class="recommended">Recommended</aside>
-
     </div>
     <div class="trailerPopUp"></div>
     <h2 class="cinemas-title">Cinemas</h2>
-
     <div class="cinemas-container">
         <div class="cinemas">
         </div>
-
     </div>
 </main>
-
 <footer>
     <div class="footer">
         <div class="sub-footer">
@@ -133,7 +89,6 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Quisque euismod, nisi eu aliquet aliquet, nisl nisl
                     euismod, nisi eu aliquet aliquet, nisl nisl
-
                 </p>
             </div>
             <div class="mini-nav">
@@ -144,7 +99,6 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
         <hr>
         <div>
@@ -156,5 +110,6 @@
 <script src="js/main.js"></script>
 <script src="js/trailerPopUp.js"></script>
 <script src="js/layout.js"></script>
+<script src="js/stopvideo.js"></script>
 </body>
 </html>
