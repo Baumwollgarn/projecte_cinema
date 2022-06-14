@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Poppins&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 html {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    box-sizing: border-box;
 }
 
 body {
     margin:0;
     font-size: 20px;
 }
+
 header {
     box-shadow: #333333 0 0 10px;
 }
+
 footer {
     margin-top: 35px;
 }
@@ -81,19 +85,11 @@ footer {
     margin-right: 5px;
 }
 
-.full {
+.full, .half{
     color: #ffd700;
 }
 
-.half {
-    color: #ffd700;
-}
-
-.flex {
-    display:flex;
-    justify-content: space-evenly;
-}
-.schedule-content {
+.flex, .schedule-content {
     display: flex;
     justify-content: space-evenly;
 }
@@ -112,12 +108,6 @@ footer {
     display: none;
     grid-area: schedule;
 }
-
-.placeholder {
-    grid-area: ph;
-}
-
-
 
 .showtimes {
     width: 450px;
@@ -146,16 +136,13 @@ footer {
     margin-right: 15px;
     justify-content: center;
 }
+
 .showtimes-title {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.st-unique {
-    display: none;
-}
-
-.schedule {
+.st-unique, .schedule, .menu-mobile-content {
     display: none;
 }
 
@@ -181,15 +168,6 @@ footer {
     text-align: center;
     justify-content: center;
     align-items: center;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 .cinemas-title {
@@ -231,10 +209,6 @@ footer {
     width: 50px;
 }
 
-.menu-mobile-content {
-    display: none;
-}
-
 .max-mobile-ul {
     padding: 0;
 }
@@ -247,14 +221,15 @@ footer {
     margin-right: 0;
 }
 
+/* MEDIA QUERIES */
+
 /* Media query for 1300px or smaller displays */
 @media screen and (max-width: 1300px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
- /* Media query for 1065px or smaller displays */
+ /* Media query for 1200px or smaller displays */
 @media screen and (max-width: 1200px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -264,7 +239,6 @@ footer {
         margin-right: 5px;
     }
 }
-
  /* Media query for 950px or smaller displays where menu collapses */
 @media screen and (max-width: 950px) {
     .max {
@@ -278,7 +252,6 @@ footer {
     }
 
 }
-
 /* Media query for mobile displays */
 @media screen and (max-width: 700px) {
     .grid {
@@ -378,8 +351,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .footer {
         display: none;
     }
-
-
 }
 
 #language-picker-select {
@@ -436,15 +407,18 @@ and (-webkit-min-device-pixel-ratio: 2) {
 }
 
 .scroll-left {
-        border-radius: 5px;
-        overflow: hidden;
-}
-
-.scroll-left {
+    border-radius: 5px;
+    overflow: hidden;
     transform: translateX(100%);
     text-decoration: underline black 2px;
     animation: scroll-left 20s linear infinite;
 }
+
+.scroll-container {
+    overflow: hidden;
+}
+
+/* Animations */
 
 @keyframes scroll-left {
     from {
@@ -455,4 +429,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 

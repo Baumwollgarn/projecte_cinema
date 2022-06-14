@@ -9,7 +9,6 @@
     margin-bottom: 1em;
 }
 
-
 .line-one,
 .line-two,
 .line-three {
@@ -28,7 +27,7 @@
     background-color: rgb(255, 255, 255);
     padding: 50px;
     border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
 } 
 
  .form-group {
@@ -39,7 +38,6 @@
     margin: 10px auto;
     font-size: 20px;
 }
-
 
 .form-group > input, select {
     width: 220px;
@@ -77,9 +75,7 @@
     color: rgb(255, 255, 255);
     border: 1px solid #ccc;
     background-color: #000000;
-  
 }
-
 
 .submit-btn {
     width: 35%;
@@ -116,6 +112,8 @@
     transform: scale(1.05);
 
 }
+
+/* MEDIA QUERIES */
 @media only screen
 and (max-width: 720px) {
     .container {

@@ -20,6 +20,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 nav > ul > li {
     display: inline-block;
     margin-left: 2em;
@@ -38,7 +39,6 @@ nav > ul > li.max:hover {
     font-weight: bold;
 
 }
-
 
 nav > ul > li > a {
     text-decoration: none;
