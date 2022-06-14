@@ -1,14 +1,3 @@
-function hideShowTimes(id) {
-    document.getElementById("showTimes").style.display = "none";
-    document.getElementById("dark").style.display = "none";
-    document.getElementById("schedule-" + {id}).style.display = "none";
-}
-
-function showShowTimes(id) {
-    document.getElementById("showTimes").style.display = "flex";
-    document.getElementById("dark").style.display = "flex";
-}
-
 function openMobileMenu() {
     if (document.getElementById("menu-mobile-content").classList.contains("closed")) {
         document.getElementById("menu-mobile-content").style.display = "block";
@@ -43,23 +32,9 @@ function showShowTimesCinema(id) {
     dark.style.display = "flex";
 }
 
-function hideShowTimesCinema(id) {
-
-    let schedule = document.querySelector(`.st-unique`);
-    let dark = document.querySelector('.dark');
-
-    schedule.style.display = "none";
-    dark.style.display = "none";
-}
-
 function closeAll() {
-    let schedule = document.querySelectorAll(`.st-unique`)
     let dark = document.querySelector('.dark')
     let trailerCard = document.querySelectorAll('.trailerCard');
-
-    schedule.forEach(schedule => {
-        schedule.style.display = "none";
-    });
     dark.style.display = "none";
     trailerCard.forEach(card => {
         card.style.display = "none";
