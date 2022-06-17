@@ -33,8 +33,13 @@ function showShowTimesCinema(id) {
 }
 
 function closeAll() {
+    let schedule = document.querySelectorAll(`.st-unique`)
     let dark = document.querySelector('.dark')
     let trailerCard = document.querySelectorAll('.trailerCard');
+
+    schedule.forEach(schedule => {
+        schedule.style.display = "none";
+    });
     dark.style.display = "none";
     trailerCard.forEach(card => {
         card.style.display = "none";
